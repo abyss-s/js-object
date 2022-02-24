@@ -9,7 +9,7 @@ class Person{
     }
 }
 
-// 새로운 클래스 정의: 상속
+// 새로운 클래스 정의: 상속(inheritance)
 //                   extends 사용 - 중복 제거
 
 class PersonPlus extends Person {
