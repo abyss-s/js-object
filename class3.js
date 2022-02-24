@@ -9,6 +9,7 @@ class Person {
         }    
 }
 
+
 Person.prototype.sum = function(){
     return 'prototype : ' + (this.first + this.second);
 }
@@ -16,8 +17,7 @@ Person.prototype.sum = function(){
 var kim = new Person('kim', 10, 20);
 var lee = new Person('lee', 10, 10);
 
-// sum 재정의: "객체 이름"."함수 이름" = f(){}
-//            sum() => sum (*****괄호 붙이지 말 것*****)
+
 kim.sum = function(){
     return 'this : ' + (this.first + this.second);
 }
