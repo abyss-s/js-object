@@ -1,28 +1,34 @@
-class Person {
+class Person{
     constructor(name, first, second){
         this.name = name;
         this.first = first;
         this.second = second;
     }
     sum(){
-        return 'prototype : '+(this.first+this.second);
-        }    
+        return 'prototype : '+ (this.first + this.second);
+    }
 }
 
+// 새로운 클래스 정의: 상속
+//                   extends 사용 - 중복 제거
 
-Person.prototype.sum = function(){
-    return 'prototype : ' + (this.first + this.second);
+class PersonPlus extends Person {
+    /*
+    constructor(name, first, second){
+        this.name = name;
+        this.first = first;
+        this.second = second;
+    }
+    sum(){
+        return 'prototype : '+ (this.first + this.second);
+    }
+    */
+    avg(){
+        return (this.first + this.second)/2;
+    }
 }
 
-var kim = new Person('kim', 10, 20);
-var lee = new Person('lee', 10, 10);
+var kim = new PersonPlus('kim', 10, 20);
 
-
-kim.sum = function(){
-    return 'this : ' + (this.first + this.second);
-}
-
-
-console.log('kim : ', kim);
-console.log('kim.sum() ', kim.sum());
-console.log('lee.sum() ', lee.sum());
+console.log("kim.sum()", kim.sum());
+console.log("lee.sum()", kim.avg());
